@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://images.unsplash.com/uploads/1413222992504f1b734a6/1928e537?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y29tbXVuaWNhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://media.istockphoto.com/id/485946989/photo/customer-file-concept.jpg?s=612x612&w=0&k=20&c=mv_oQlmhh5zkO_CE-2DxyhU2o1nkqLC_vFST176_-ns=" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://media.istockphoto.com/id/145914335/photo/yellow-pages.jpg?s=612x612&w=0&k=20&c=6MHN9NEm6m-p94r8hH1EvukJsnGCgTgDtrC3GVENCtw=" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<h1>Telephones</h1>
+
+<table class="table-bordered table-striped">
+  <thead>
+    <tr>
+      <th class="table-col">First name</th>
+      <th class="table-col">Last name</th>
+      <th class="table-col">Phone</th>
+      <th class="table-col">Email</th>
+      <th class="table-col">Door no</th>
+      <th class="table-col">Street</th>
+      <th class="table-col">Area</th>
+      <th class="table-col">City</th>
+      <th class="table-col">State</th>
+      <th class="table-col">Country</th>
+      <th class="table-col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @telephones.each do |telephone| %>
+      <tr>
+        <td class="table-col"><%= telephone.first_name %></td>
+        <td class="table-col"><%= telephone.last_name %></td>
+        <td class="table-col"><%= telephone.phone %></td>
+        <td class="table-col"><%= telephone.email %></td>
+        <td class="table-col"><%= telephone.door_no %></td>
+        <td class="table-col"><%= telephone.street %></td>
+        <td class="table-col"><%= telephone.area %></td>
+        <td class="table-col"><%= telephone.city %></td>
+        <td class="table-col"><%= telephone.state %></td>
+        <td class="table-col"><%= telephone.country %></td>
+        <td><%= link_to 'Show', telephone %></td>
+        <td><%= link_to 'Edit', edit_telephone_path(telephone) %></td>
+        <td><%= link_to 'Destroy', telephone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Telephone', new_telephone_path %>

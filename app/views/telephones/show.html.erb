@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+<%= @telephone.first_name %>
+<%= "'s details" %>
+</h3>
+
+<p>
+  <strong>First name:</strong>
+  <%= @telephone.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @telephone.last_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @telephone.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @telephone.email %>
+</p>
+
+<p>
+  <strong>Door no:</strong>
+  <%= @telephone.door_no %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @telephone.street %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @telephone.area %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @telephone.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @telephone.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @telephone.country %>
+</p>
+
+<div class="btn-container">
+<%= link_to 'Edit', edit_telephone_path(@telephone) %> |
+<%= link_to 'Back', telephones_path %>
+</div>
